@@ -1,10 +1,21 @@
 import '../Style/MovieList.css';
-function MoviesList({ movieList }) {
-  //make a loop to look for that movie in particular and show all details about it
+import { useState } from 'react';
 
+function MoviesList({ movieList, genre }) {
+  // const [movies, setMovies] = useState([]);
+
+  const list = [];
+
+  for (let i = 0; i < movieList.length; i++) {
+    if (movieList[i].genres.includes(genre)) {
+      // setMovies(movieList[i]);
+      list.push(movieList[i]);
+    }
+  }
+  console.log(list);
   return (
     <div className='movies'>
-      {movieList.map((movie) => (
+      {list.map((movie) => (
         <div key={movie.title}>
           <h2>{movie.title}</h2>
           <p>{movie.year}</p>

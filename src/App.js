@@ -18,7 +18,7 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      <MoviesList movieList={movies} />
+      <MoviesList movieList={movies} genre={'Comedy'} />
     </div>
   );
 }
